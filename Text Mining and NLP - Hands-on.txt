@@ -1,0 +1,25 @@
+# Text Mining and NLP - Hands-on
+#################################
+
+sentence = "We are Learning TextMining from Data Einstein"
+
+'TextMining' in sentence # verify if the text is present in the text or not
+'Poojan Chinai' in sentence
+sentence.index('Learning') # Check the index location
+
+sentence.split().index('TextMining') # Split the sentences into words and present the position
+
+sentence.split()[2] # 3rd word in the sentence 
+
+sentence.split()[2][::-1] # Print the 3rd word in reverse order
+
+words = sentence.split() # All the words in list format
+
+first_word = words[0]
+
+last_word = words[len(words)-1] # Index in the reverse order start with -1
+
+concat_word = first_word + last_word
+concat_word = first_word +' '+ last_word
+ # join 2 words
+print(concat_word)

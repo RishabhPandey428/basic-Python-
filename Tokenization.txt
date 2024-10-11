@@ -1,0 +1,43 @@
+
+# Word Tokenization 
+import nltk
+from nltk import word_tokenize
+
+words = word_tokenize("I am reading NLP Fundamentals")
+print(words)
+
+nltk.pos_tag(words) # Parts of Speech Tagging
+
+nltk.download('stopwords')  # Stop Words from nltk library
+
+from nltk.corpus import stopwords
+
+stop_words = stopwords.words('English') # 179 pre defined stop words
+print(stop_words)
+
+sentence1 = "I am learning NLP. It is one of the most popular library in Python"
+
+sentence_words = word_tokenize(sentence1) # Tokenize the sentence
+print(sentence_words)
+
+# Filtering stop words from the input string
+sentence_no_stops = ' '.join([word for word in sentence_words if word not in stop_words]) 
+print(sentence_no_stops)
+
+
+# Replace words in string
+sentence2 = "I visited MY from IND on 14-02-20"
+
+normalized_sentence = sentence2.replace("MY", "Malaysia").replace("IND", "India").replace("-20", "-2020")
+print(normalized_sentence)
+
+from autocorrect import Speller # Library to check typos
+spell = Speller(lang='en') # supported languages: en, pl, ru, uk, tr, es
+
+spell('Natureal') # Correct spelling is printed
+
+sentence3 = word_tokenize("Ntural Luanguage Processin deals with the art of extracting insightes from Natural Languaes")
+print(sentence3)
+
+sentence_corrected = ' '.join([spell(word) for word in sentence3])
+print(sentence_corrected)
